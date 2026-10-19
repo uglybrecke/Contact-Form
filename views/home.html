@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon.png">
     <link rel="stylesheet" href="stylesheet/styles.css">
     <title>Contact Form</title>
     <script src="js/contact.js" defer></script>
@@ -11,17 +12,92 @@
     <h1>Contact Form</h1>
     <form id="form" action="#" method="get">
         <fieldset id = "pinfo">
+
+            <div class="form-group">
+                <!-- First Name -->
+                <label for="fname">First Name</label>
+                <span class="err" id="err-fname">First Name is required</span>
+                <input type="text" id="fname" name="fname">
+            </div>
+
+            <div class="form-group">
+                <!-- Last Name -->
+                <label for="lname">Last Name</label>
+                <span class="err" id="err-lname">Last Name is required</span>
+                <input type="text" id="lname" name="lname">
+            </div>
+
+            <div class="form-group">
+                <!-- Job Title -->
+                <label for="job">Job Title</label>
+                <span class="err" id="err-job">Job Title is required</span>
+                <input type="text" id="job" name="job">
+            </div>
+
+            <div class="form-group">
+                <!-- Company -->
+                <label for="company">Company</label>
+                <span class="err" id="err-company">Company is required</span>
+                <input type="text" id="company" name="company">
+            </div>
+
+            <div class="form-group">
+                <!-- LinkedIn URL -->
+                <label for="linkedIn">LinkedIn URL</label>
+                <span class="err" id="err-linkedIn">Public Contact Page required</span>
+                <input type="url" id="linkedIn" name="linkedIn">
+            </div>
+
+            <div class="form-group">
+                <!-- Email Address -->
+                <label for="email">FILL ME IN WITH NAME</label>
+                <span class="err" id="err-email">Email required</span>
+                <input type="email" id="email" name="email">
+            </div>
+
         </fieldset>
 
+        <!-- Meeting method -->
         <fieldset id = "meetinfo">
+            <legend>How did we meet?</legend>
+                <span class="err" id="err-size">Please select an option</span>
+                    <select id="meeting" name="meeting">
+                        <option value="none">-- Please Select --</option>
+                        <option value="small">School</option>
+                        <option value="medium">Work</option>
+                        <option value="large">Seminar/Workshop/Open-House</option>
+                        <option value="large">Other</option>
+                    </select>
+            <!-- OTHER -->
+            <label for="other">Other</label>
+                <span class="err" id="err-other">must specify if other is selected</span>
+                    <input type="other" id="other" name="other">
+
         </fieldset>
 
         <fieldset id="messege">
+            <!-- messege field -->
+            <label for="comment">Messege:</label>
+            <textarea rows="5" id="messege" name="messege"></textarea>
         </fieldset>
 
+        <!-- add to mailing list -->
         <fieldset id="contact">
+            <label for="mailing">
+                    <input type="checkbox" id="mailing" name="mailing[]"
+                           value="yesmail">Please add me to your mailing list
+            </label>
+            <legend>Select Pickup or Delivery</legend>
+                <!-- same name for these makes them so you can't select both -->
+                <span class="err" id="err-method">Choose an email format</span>
+                    <input type="radio" id="html" name="method" value="html">
+                    <label for="delivery">HTML</label>
+
+                    <input type="radio" id="text" name="method" value="text">
+                    <label for="pickup">Text</label>
 
         </fieldset>
+
         <button type="submit" id="submit-button"></button>
     </form>
     
