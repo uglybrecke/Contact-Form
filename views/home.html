@@ -50,7 +50,7 @@
 
             <div class="form-group">
                 <!-- Email Address -->
-                <label for="email">FILL ME IN WITH NAME</label>
+                <label for="email">Email Address</label>
                 <span class="err" id="err-email">Email required</span>
                 <input type="email" id="email" name="email">
             </div>
@@ -59,47 +59,56 @@
 
         <!-- Meeting method -->
         <fieldset id = "meetinfo">
-            <legend>How did we meet?</legend>
-                <span class="err" id="err-size">Please select an option</span>
-                    <select id="meeting" name="meeting">
-                        <option value="none">-- Please Select --</option>
-                        <option value="small">School</option>
-                        <option value="medium">Work</option>
-                        <option value="large">Seminar/Workshop/Open-House</option>
-                        <option value="large">Other</option>
-                    </select>
+
+            <div class="form-group">
+                <label for="meeting">How did we meet?</label>
+                    <span class="err" id="err-size">Please select an option</span>
+                        <select id="meeting" name="meeting">
+                            <option value="none">-- Please Select --</option>
+                            <option value="small">School</option>
+                            <option value="medium">Work</option>
+                            <option value="large">Seminar/Workshop/Open-House</option>
+                            <option value="other">Other</option>
+                        </select>
+            </div>
+
             <!-- OTHER -->
-            <label for="other">Other</label>
-                <span class="err" id="err-other">must specify if other is selected</span>
-                    <input type="other" id="other" name="other">
+            <div class="form-group">
+                <label for="other">Other</label>
+                    <span class="err" id="err-other">must specify if other is selected</span>
+                        <input type="text" id="other" name="other">
+            </div>
 
         </fieldset>
 
         <fieldset id="messege">
-            <!-- messege field -->
-            <label for="comment">Messege:</label>
-            <textarea rows="5" id="messege" name="messege"></textarea>
+            <div class="form-group">
+                <!-- messege field -->
+                <label for="message-text">Message:</label>
+                <textarea rows="5" id="message-text" name="message"></textarea>
+            </div>
         </fieldset>
 
         <!-- add to mailing list -->
         <fieldset id="contact">
+            <!-- Mailing list -->
             <label for="mailing">
-                    <input type="checkbox" id="mailing" name="mailing[]"
-                           value="yesmail">Please add me to your mailing list
+                <input type="checkbox" id="mailing" name="mailing" value="yes">
+                Please add me to your mailing list
             </label>
-            <legend>Select Pickup or Delivery</legend>
-                <!-- same name for these makes them so you can't select both -->
-                <span class="err" id="err-method">Choose an email format</span>
-                    <input type="radio" id="html" name="method" value="html">
-                    <label for="delivery">HTML</label>
 
-                    <input type="radio" id="text" name="method" value="text">
-                    <label for="pickup">Text</label>
+            <!-- Email format -->
+            <p>Email Format:</p>
+            <span class="err" id="err-method">Choose an email format</span>
 
+            <input type="radio" id="html" name="method" value="html">
+            <label for="html">HTML</label>
+
+            <input type="radio" id="text" name="method" value="text">
+            <label for="text">Text</label>
         </fieldset>
 
-        <button type="submit" id="submit-button"></button>
+        <button type="submit" id="submit-button">Submit</button>
     </form>
-    
 </body>
 </html>
