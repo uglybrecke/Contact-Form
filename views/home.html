@@ -44,14 +44,15 @@
             <div class="form-group">
                 <!-- LinkedIn URL -->
                 <label for="linkedIn">LinkedIn URL</label>
-                <span class="err" id="err-linkedIn">Public Contact Page required</span>
+                <span class="err" id="err-linkedIn">Must be valid LinkedIn url (Starts with https://linkedin.com/in/)</span>
                 <input type="url" id="linkedIn" name="linkedIn">
             </div>
 
             <div class="form-group">
                 <!-- Email Address -->
                 <label for="email">Email Address</label>
-                <span class="err" id="err-email">Email required</span>
+                <span class="err" id="err-email">Invalid Email Address</span>
+                <span class="err" id="err-req-email">Email required for mailing list</span>
                 <input type="email" id="email" name="email">
             </div>
 
@@ -62,7 +63,7 @@
 
             <div class="form-group">
                 <label for="meeting">How did we meet?</label>
-                    <span class="err" id="err-size">Please select an option</span>
+                    <span class="err" id="err-meeting">Please select an option</span>
                         <select id="meeting" name="meeting">
                             <option value="none">-- Please Select --</option>
                             <option value="small">School</option>
@@ -75,7 +76,7 @@
             <!-- OTHER -->
             <div class="form-group">
                 <label for="other">Other</label>
-                    <span class="err" id="err-other">must specify if other is selected</span>
+                    <span class="err" id="err-other">Must specify if other is selected!</span>
                         <input type="text" id="other" name="other">
             </div>
 

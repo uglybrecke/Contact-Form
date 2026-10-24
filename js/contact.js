@@ -34,21 +34,52 @@ document.getElementById("form").onsubmit = () => {
     //regex test version
     let email = document.getElementById("email").value.trim();
     if(email != "") {
-        // begin check / look for @ look for more than 1 of anything .+ look for . with escape \. end regex /
-        let testEmail = /@.+\./.test(email);
+        // begin check / look for @ look for more than 1 of anything .+ look for . with escape \. then some other characters .+ end regex /
+        let testEmail = /@.+\..+/.test(email);
         if(!testEmail) {
             document.getElementById("err-email").style.display = "block";
             isvalid = false;
         }
     }
 
+    //google recommended: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ or /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    //these seem waaaaay overcomplicated for what we are doing, but possibly worthwhile to just copy paste
 
-    //if email address is checked then we email is required
+    //if add mailing list is checked then email is required
+    let mailinglist = document.getElementById("mailing").checked;
+    if(mailinglist) {
+        if (email == "") {
+            //use the email required for mailing list error!
+            document.getElementById("err-req-email").style.display = "block";
+            isvalid = false;
+        }
+    }
 
     //if linked in address is provided then it must say linkedin.com/in
+    //linkedin verification
+    let linkurl = document.getElementById("linkedIn").value.trim();
+    if(linkurl != "") {
+        //must start ^ (wierd that : doesn't need an escape)
+        let testLinkedIn = /^https:\/\/linkedin\.com\/in\//.test(linkurl);
+        if(!testLinkedIn) {
+            document.getElementById("err-linkedIn").style.display = "block";
+            isvalid = false;
+        }
+    }
 
     //how we met is required
+    let meet = document.getElementById("meeting").value;
+    if(meet == "none") {
+        document.getElementById("err-meeting").style.display = "block";
+        isvalid = false;
     //if how we met is marked as other, something must be put in the field
+    } else if(meet == "other") {
+        let other = document.getElementById("other").value.trim();
+        if(other == "") {
+            document.getElementById("err-other").style.display = "block";
+            isvalid = false;
+        }
+    }
 
     return isvalid;
 }
