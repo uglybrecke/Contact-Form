@@ -54,4 +54,5 @@ fieldset {
 
 .err {
     display: none;
+    color: red;
 }
