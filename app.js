@@ -9,13 +9,25 @@ const app = express();
 //for our server to listen on
 const PORT = 3002;
 
-//enable static file serving (from a folder called public)
-app.use(express.static('.'));
+//ejs
+app.set('view engine', 'ejs');
+
+//read form data
+app.use(express.urlencoded({ extended: false }));
+
+//store contact form data
+const constacts = [];
 
 //define a default route ("/")
 app.get('/', (req, res) => {
-    //res.send('Welcome to Thatza Pizza');
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+    res.render('home');
+});
+
+// Receive the form data and add it
+app.post('/submit', (req, res) => {
+    contacts.push(req.body);
+
+    res.send('saved!');
 });
 
 //start the server on the designated port
