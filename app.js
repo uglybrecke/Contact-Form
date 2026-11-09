@@ -15,19 +15,27 @@ app.set('view engine', 'ejs');
 //read form data
 app.use(express.urlencoded({ extended: false }));
 
+//serve all files
+app.use(express.static('.'));
+
 //store contact form data
-const constacts = [];
+const contacts = [];
 
 //define a default route ("/")
 app.get('/', (req, res) => {
     res.render('home');
 });
 
-// Receive the form data and add it
+// Receive the form data and add it with this route to submit
 app.post('/submit', (req, res) => {
     contacts.push(req.body);
 
-    res.send('saved!');
+    res.render('confirm');
+});
+
+// make this page have access to contacts
+app.get('/admin', (req, res) => {
+    res.render('admin', {contacts});
 });
 
 //start the server on the designated port
