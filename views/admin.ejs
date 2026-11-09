@@ -7,7 +7,23 @@
 </head>
 <body>
     <h1>Submissions</h1>
-    //for each contact
-    
+    <ul>
+        <% contacts.forEach(contact => { %>
+            <li>
+              <p><%= contact.fname %></p>
+              <p><%= contact.lname %></p>
+              <p><%= contact.job %></p>
+              <p><%= contact.company %></p>
+              <p><%= contact.linkedIn %></p>
+              <p><%= contact.email %></p>
+              <p><%= contact.meeting %></p>
+              <p><%= contact.other %></p>
+              <p><%= contact.message-text %></p>
+              <p><%= contact.mailing %></p>
+              <p><%= contact.html %></p>
+              <p><%= contact.text %></p>
+            </li>
+        <% }) %>
+    </ul>    
 </body>
 </html>
