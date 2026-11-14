@@ -7,23 +7,28 @@
 </head>
 <body>
     <h1>Submissions</h1>
-    <ul>
-        <% contacts.forEach(contact => { %>
-            <li>
-              <p>First Name: <%= contact.fname %></p>
-              <p>last Name: <%= contact.lname %></p>
-              <p>Job Name: <%= contact.job %></p>
-              <p>Company Name: <%= contact.company %></p>
-              <p>LinkedIn: <%= contact.linkedIn %></p>
-              <p>Email: <%= contact.email %></p>
-              <p>How did we meet: <%= contact.meeting %></p>
-              <p>How met if OTHER: <%= contact.other %></p>
-              <p>Message: <%= contact.message %></p>
-              <p>Mailing: <%= contact.mailing %></p>
-              <p>HTML: <%= contact.html %></p>
-              <p>TEXT: <%= contact.text %></p>
-            </li>
-        <% }) %>
-    </ul>    
+    <% if (contacts.length === 0) { %>
+        <p>No contacts to display at this time!</p>
+            <% } else { %>
+            <ul>
+            <% contacts.forEach(contact => { %>
+                <li>
+                    <p>First Name: <%= contact.fname %></p>
+                    <p>last Name: <%= contact.lname %></p>
+                    <p>Job Name: <%= contact.job %></p>
+                    <p>Company Name: <%= contact.company %></p>
+                    <p>LinkedIn: <%= contact.linkedIn %></p>
+                    <p>Email: <%= contact.email %></p>
+                    <p>How did we meet: <%= contact.meeting %></p>
+                    <p>How met if OTHER: <%= contact.other %></p>
+                    <p>Message: <%= contact.message %></p>
+                    <p>Mailing: <%= contact.mailing %></p>
+                    <p>HTML: <%= contact.html %></p>
+                    <p>TEXT: <%= contact.text %></p>
+                    <p>TIMESTAMP: <%= contact.timestamp %></p>
+                </li>
+            <% }) %>
+            </ul> 
+    <% } %>
 </body>
 </html>

@@ -28,6 +28,10 @@ app.get('/', (req, res) => {
 
 // Receive the form data and add it with this route to submit
 app.post('/submit', (req, res) => {
+
+    //add timestamp
+    req.body.timestamp = new Date();
+
     contacts.push(req.body);
 
     res.render('confirm');
