@@ -34,12 +34,17 @@ app.post('/submit', (req, res) => {
 
     contacts.push(req.body);
 
-    res.render('confirm');
+    res.render('confirm', {contact: req.body});
 });
 
 // make this page have access to contacts
 app.get('/admin', (req, res) => {
     res.render('admin', {contacts});
+});
+
+//contact route for contact page
+app.get('/contact', (req, res) => {
+    res.render('contact');
 });
 
 //start the server on the designated port

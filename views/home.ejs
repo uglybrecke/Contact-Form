@@ -3,117 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/images/favicon.png">
-    <link rel="stylesheet" href="\stylesheet\styles.css">
-    <title>Contact Form</title>
-    <script src="js/contact.js" defer></script>
+    <title>Nick Brecke - Resume</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="stylesheet/html_style.css">
 </head>
 <body>
-    <h1>Contact Form</h1>
-    <form id="form" action="/submit" method="post">
-        <fieldset id = "pinfo">
-
-            <div class="form-group">
-                <!-- First Name -->
-                <label for="fname">First Name</label>
-                <span class="err" id="err-fname">First Name is required</span>
-                <input type="text" id="fname" name="fname">
+    <header>
+        <img src="images\WIN_20261009_21_42_36_Pro.jpg" alt="Headshot">
+        <div>
+            <h1>Nick Brecke</h1>
+            <div class="contact-info">
+                <a href="mailto:nickbrecke@gmail.com">nickbrecke@gmail.com</a>
+                <span class="separator">|</span>
+                <span>(360) 649-8742</span>
+                <span class="separator">|</span>
+                <a href="https://www.linkedin.com/in/nick-brecke-24071b2b1/">LinkedIn</a>
+                <span class="separator">|</span>
+                <a id="github" href="https://github.com/uglybrecke">GitHub</a>
             </div>
+        </div>
+    </header>
+    <h2>Summary</h2>
+        <p>Entry-level software developer combining formal software education with 16 years of experience managing teams, implementing process improvements, and meeting demanding production schedules.</p>
+        <h2>Education</h2>
+            <h3>Bachelors of Applied Science, Software Development <strong>(2026 - Present)</strong></h3>
+                <p>Green River College, Auburn, WA</p>
+                <p>Software Development, Computer Science, Software Engineering, Web Development, Systems Analysis</p>
 
-            <div class="form-group">
-                <!-- Last Name -->
-                <label for="lname">Last Name</label>
-                <span class="err" id="err-lname">Last Name is required</span>
-                <input type="text" id="lname" name="lname">
-            </div>
+            <h3>AAS-T Data Analysis and Software Development <strong>(2024 - 2026)</strong></h3>
+                <p>Green River College, Auburn, WA</p>
+                <p>Programming, Data Analytics, Database Systems, Data Visualization</p>    
+        <h2>Skills and Certifications</h2>
+    <div>
+        <ul>
+            <li><strong>Languages: </strong>Java, SQL, and Javascript</li>
+            <li><strong>Web: </strong>HTML, CSS</li>
+            <li><strong>Tools: </strong>Git, Excel, Netsuite, RFSmart</li>
+            <li>Agile, Pair Programming, Sprint Planning</li>
+            <li>Hazmat Shipping Certification (LIM/LMB)</li>
+            <li>Documentation and SOP Development </li>
+        </ul>
+        
+        <h2>Project Experience</h2>
+            <h3>Developer / Scrum-master</h3>
+                <p>Green River College / P48 Marketing <strong>(May - June 2026)</strong></p>
+        <ul>
+            <li>Developed a JavaScript and HTML web application for radio ad scheduling and quoting.</li>
+            <li>Used Agile practices to build software with a team that replicated a costly industry tool.</li>
+            <li>Coordinated team communication and reported project progress to stakeholders.</li>
+        </ul>
+    </div>
 
-            <div class="form-group">
-                <!-- Job Title -->
-                <label for="job">Job Title</label>
-                <span class="err" id="err-job">Job Title is required</span>
-                <input type="text" id="job" name="job">
-            </div>
-
-            <div class="form-group">
-                <!-- Company -->
-                <label for="company">Company</label>
-                <span class="err" id="err-company">Company is required</span>
-                <input type="text" id="company" name="company">
-            </div>
-
-            <div class="form-group">
-                <!-- LinkedIn URL -->
-                <label for="linkedIn">LinkedIn URL</label>
-                <span class="err" id="err-linkedIn">Must be valid LinkedIn url (Starts with https://linkedin.com/in/)</span>
-                <input type="url" id="linkedIn" name="linkedIn">
-            </div>
-
-            <div class="form-group">
-                <!-- Email Address -->
-                <label for="email">Email Address</label>
-                <span class="err" id="err-email">Invalid Email Address</span>
-                <span class="err" id="err-req-email">Email required for mailing list</span>
-                <input type="email" id="email" name="email">
-            </div>
-
-        </fieldset>
-
-        <!-- Meeting method -->
-        <fieldset id = "meetinfo">
-
-            <div class="form-group">
-                <label for="meeting">How did we meet?</label>
-                    <span class="err" id="err-meeting">Please select an option</span>
-                        <select id="meeting" name="meeting">
-                            <option value="none">-- Please Select --</option>
-                            <option value="small">School</option>
-                            <option value="medium">Work</option>
-                            <option value="large">Seminar/Workshop/Open-House</option>
-                            <option value="other">Other</option>
-                        </select>
-            </div>
-
-            <!-- OTHER -->
-            <div class="form-group">
-                <label for="other">Other</label>
-                    <span class="err" id="err-other">Must specify if other is selected!</span>
-                        <input type="text" id="other" name="other">
-            </div>
-
-        </fieldset>
-
-        <fieldset id="messege">
-            <div class="form-group">
-                <!-- messege field -->
-                <label for="message-text">Message:</label>
-                <textarea rows="5" id="message-text" name="message"></textarea>
-            </div>
-        </fieldset>
-
-        <!-- add to mailing list -->
-        <fieldset id="contact">
-            <!-- Mailing list -->
-            <label for="mailing">
-                <input type="checkbox" id="mailing" name="mailing" value="yes">
-                Please add me to your mailing list
-            </label>
-
-            <!-- Email format -->
-            <p>Email Format:</p>
-            <span class="err" id="err-method">Choose an email format</span>
-
-            <input type="radio" id="html" name="method" value="html">
-            <label for="html">HTML</label>
-
-            <input type="radio" id="text" name="method" value="text">
-            <label for="text">Text</label>
-        </fieldset>
-
-        <button type="submit" id="submit-button">Submit</button>
-    </form>
-    <footer>
-        <a href="https://github.com/uglybrecke/Contact-Form">Github Repo</a>
-    </footer>
+    <h2>Work Experience</h2>
+        <h3>Director of Production</h3>
+            <p>iClick Inc <strong>(2012-2024)</strong></p>
+                <ul>
+                    <li>Advanced through multiple positions from Shipping Specialist to Production Director over 12 years.</li>
+                    <li>Managed and mentored diverse teams ranging from entry-level to experienced professionals.</li>
+                    <li>Identified, implemented and refined process improvements as well as robust automation projects.</li>
+                </ul>
+                    <h3>Assistant Manager</h3>
+                        <p>Dominos Pizza <strong>(2008-2012)</strong></p>
+                <ul>
+                    <li>Customer service and conflict resolution techniques.</li>
+                    <li>Live Labor Cost vs Sales, Efficient Routing, Scheduling and Corporate Training Procedures.</li>
+                </ul>
 </body>
-
 </html>

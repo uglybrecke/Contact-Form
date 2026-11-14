@@ -8,6 +8,23 @@
 <body>
     <h1>Your Form has been submitted</h1>
 
+    <ul>
+        <li>
+            <p>First Name: <%= contact.fname %></p>
+            <p>last Name: <%= contact.lname %></p>
+            <p>Job Name: <%= contact.job %></p>
+            <p>Company Name: <%= contact.company %></p>                <p>LinkedIn: <%= contact.linkedIn %></p>
+            <p>Email: <%= contact.email %></p>
+            <p>How did we meet: <%= contact.meeting %></p>
+            <p>How met if OTHER: <%= contact.other %></p>
+            <p>Message: <%= contact.message %></p>
+            <p>Mailing: <%= contact.mailing %></p>
+            <p>HTML: <%= contact.html %></p>
+            <p>TEXT: <%= contact.text %></p>
+            <p>TIMESTAMP: <%= contact.timestamp %></p>
+        </li>
+    </ul>
+
     <form action="/" method="get">
         <button type="submit">Back</button>
     </form>
